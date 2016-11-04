@@ -2,13 +2,21 @@ package avaliacao_models;
 
 import java.util.Date;
 
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
-public class quiz {
-	 
-	private String nome;
+
+public class Quiz {
+	 	
+	@Id 
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id_Curso;
+	
+	private String nome;
 	private Date data_Inicio;
 	private Date data_Fim;
+	
 	public String getNome() {
 		return nome;
 	}
@@ -48,7 +56,7 @@ public class quiz {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		quiz other = (quiz) obj;
+		Quiz other = (Quiz) obj;
 		if (id_Curso != other.id_Curso)
 			return false;
 		return true;

@@ -1,6 +1,6 @@
 package avaliacao_models;
 
-public class questao {
+public class Questao {
 
 	private String descricao;
 
@@ -11,8 +11,6 @@ public class questao {
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;
 	}
-	
-	
 	
 	
 }

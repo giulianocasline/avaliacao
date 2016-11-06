@@ -1,6 +1,6 @@
 package avaliacao_models;
 
-public class resposta {
+public class Resposta {
 
 private int id_aluno;
 private int id_questao;

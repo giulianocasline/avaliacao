@@ -1,0 +1,25 @@
+public class ObjJSON {
+   private final long id;
+   private final String name;
+   public ObjJSON (Obj obj){ // Converte de obj para ObjJSON
+      this.id = obj.getId();
+      this.name = obj.getName();
+   }
+}
+// chamada
+result.use(Results.json()).from(new ObjJSON(obj)).serialize();
+
+
+--------------------
+criar uma jsp
+
+// Action
+@Get("/get/json/")
+public String getJSON (){
+   return service.getJSON();
+}
+// O nome dessa JSP DEVE SER: getJSON.json.jsp
+// JSP
+${string}
+
+--------------------------

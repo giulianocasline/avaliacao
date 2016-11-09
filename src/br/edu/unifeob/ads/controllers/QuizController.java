@@ -1,12 +1,14 @@
 package br.edu.unifeob.ads.controllers;
 
+import java.util.List;
+
 import javax.inject.Inject;
 
 import avaliacao_models.Quiz;
 import br.com.caelum.vraptor.Controller;
 import br.com.caelum.vraptor.Path;
-import br.com.caelum.vraptor.Post;
 import br.com.caelum.vraptor.Result;
+import br.com.caelum.vraptor.view.Results;
 
 @Controller
 public class QuizController {
@@ -23,15 +25,11 @@ public class QuizController {
 		this.quizDAO = quizDAO;
 	}
 	
-	@Path("quiz/")
-	public void form(){
-		
+	@Path("quizzes")
+	public void listar(){
+		List<Quiz> quizzes = quizDAO.listar();
+		result.use(Results.json()).from(quizzes).serialize();
 	}
-	
-	/*@Post
-	public void create(Quiz quiz){
-		quizDAO.salvar(quiz);
-	}*/
 	
 	
 	
